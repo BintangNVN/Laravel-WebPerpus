@@ -271,6 +271,63 @@ footer p {
        background: #ffc107; /* Warna emas yang sedikit lebih gelap */
    }
 
+/* Media Query untuk tampilan HP dengan lebar layar maksimal 768px */
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 100%; /* Buat lebar container menjadi 100% */
+        padding: 0 20px; /* Tambahkan sedikit padding agar tidak terlalu menempel */
+    }
+
+    header h1 {
+        font-size: 22px; /* Perkecil ukuran font untuk header */
+        margin-left: 10px;
+    }
+
+    nav ul li {
+        margin: 0 8px; /* Kurangi jarak antar menu navigasi */
+    }
+
+    nav ul li a {
+        font-size: 16px; /* Perkecil ukuran font untuk link navigasi */
+    }
+
+    .hero h2 {
+        font-size: 36px; /* Kurangi ukuran font untuk judul utama di hero section */
+    }
+
+    .hero p {
+        font-size: 18px; /* Perkecil ukuran font untuk paragraf di hero section */
+    }
+
+    .cta-button {
+        padding: 10px 20px; /* Sesuaikan padding tombol */
+        font-size: 18px; /* Sesuaikan ukuran font tombol */
+    }
+
+    /* Buat layanan (services) menjadi tampilan vertikal pada HP */
+    .services-grid {
+        flex-direction: column; /* Ubah layout grid menjadi kolom */
+    }
+
+    .service-item {
+        width: 100%; /* Buat layanan full width pada tampilan mobile */
+        margin-bottom: 20px; /* Tambahkan jarak antar layanan */
+    }
+
+    form input, form textarea {
+        font-size: 14px; /* Perkecil ukuran input */
+        padding: 10px; /* Sesuaikan padding */
+    }
+
+    form button {
+        font-size: 16px; /* Sesuaikan ukuran tombol */
+    }
+
+    /* Footer styling */
+    footer p {
+        font-size: 14px; /* Perkecil ukuran teks di footer */
+    }
+}
 
     </style>
 </head>

@@ -102,6 +102,71 @@ footer {
     color: #ffffff;
 }
 
+/* Media query untuk layar HP (max-width: 768px) */
+@media only screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 22px; /* Kurangi ukuran font untuk header */
+        margin-left: 0; /* Hilangkan margin kiri agar lebih pas di tengah */
+        text-align: center;
+    }
+
+    nav ul {
+        padding: 0;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block; /* Ubah dari inline menjadi block untuk tampilan vertikal */
+        margin: 10px 0; /* Tambahkan jarak antar item menu */
+    }
+
+    main {
+        padding: 10px; /* Kurangi padding untuk tampilan yang lebih pas di layar kecil */
+    }
+
+    .book-list li {
+        font-size: 14px; /* Kurangi ukuran font pada daftar buku */
+        padding: 10px; /* Sesuaikan padding */
+    }
+
+    form {
+        padding: 15px; /* Sesuaikan padding form agar lebih pas di layar kecil */
+    }
+
+    form label {
+        font-size: 14px; /* Perkecil ukuran font pada label */
+    }
+
+    form input {
+        padding: 8px; /* Sesuaikan padding input */
+        font-size: 14px; /* Perkecil ukuran font input */
+    }
+
+    form button {
+        padding: 10px; /* Sesuaikan ukuran tombol */
+        font-size: 16px; /* Sesuaikan ukuran font tombol */
+    }
+
+    .mb-3.row {
+        display: flex;
+        flex-direction: column; /* Ubah tata letak dari horizontal ke vertikal */
+    }
+
+    .col-sm-2 {
+        width: 100%; /* Buat lebar label 100% */
+        margin-bottom: 5px; /* Tambahkan sedikit jarak di bawah label */
+    }
+
+    .col-sm-10 {
+        width: 100%; /* Buat lebar input 100% */
+    }
+}
+
     </style>
 </head>
 <body>

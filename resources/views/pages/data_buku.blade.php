@@ -2,13 +2,13 @@
 
 @section('content-dinamis')
     <div class="container mt-5">
-        <div class="d-flex justify-content-end mb-3">
+        <div class="d-flex justify-content-end flex-wrap mb-3">
             <!-- Form Search -->
-            <form class="d-flex me-3" action="{{ route('data_buku.data') }}" method="GET" enctype="multipart/form-data">
-                <input type="text" name="cari" placeholder="Cari Nama Buku..." class="form-control me-2">
-                <button type="submit" class="btn btn-primary">Cari</button>
+            <form class="d-flex flex-wrap me-3 mb-2 mb-md-0" action="{{ route('data_buku.data') }}" method="GET" enctype="multipart/form-data">
+                <input type="text" name="cari" placeholder="Cari Nama Buku..." class="form-control me-2 mb-2 mb-md-0">
+                <button type="submit" class="btn btn-primary mb-2 mb-md-0">Cari</button>
             </form>
-            <a href="{{ route('data_buku.tambah') }}" class="btn btn-success">+ Tambah</a>
+            <a href="{{ route('data_buku.tambah') }}" class="btn btn-success mb-2 mb-md-0">+ Tambah</a>
         </div>
 
         <!-- Alert jika ada pesan sukses -->
@@ -18,40 +18,24 @@
             </div>
         @endif
 
-        <!-- Grid Akun yang Dijual -->
+        <!-- Grid Buku -->
         <div class="row">
-            {{-- @if ($bukus->isEmpty())
-                <div class="col-12">
-                    <div class="alert alert-warning text-center">Tidak Ada Data Akun Yang Dijual</div>
-                </div>
-            @else --}}
-                @foreach ($bukus as $item)
-                    <div class="col-md-3 mb-4">
-                        <div class="card shadow-sm h-100" style="max-width: 250px;">
-                            {{-- @php
-                                dd($item->image)
-                            @endphp --}}
-                            <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}" class="card-img-top" style="height: 120px; object-fit: cover;">
-
-
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $item->name }}</h5>
-                                
-                                <p class="mt-3">Buku Berkualitas dari Perpustakaan Bintang</p>
-                                <div class="d-flex justify-content-end">
-                                    <a href="{{ route('data_buku.ubah', $item->id) }}" class="btn btn-primary me-2">Edit</a>
-                                    <a href="{{ route('peminjaman_buku.tambah', $item->id) }}" class="btn btn-warning me-2">Pinjam Buku</a>
-                                    <button class="btn btn-danger" onclick="showModalDelete('{{ $item->id }}', '{{ $item->name }}')">Hapus</button>
-                                </div>
+            @foreach ($bukus as $item)
+                <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 d-flex justify-content-center">
+                    <div class="card shadow-sm h-100" style="max-width: 250px;">
+                        <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}" class="card-img-top" style="height: 120px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <h5 class="card-title">{{ $item->name }}</h5>
+                            <p class="mt-3">Buku Berkualitas dari Perpustakaan Bintang</p>
+                            <div class="d-flex justify-content-end flex-wrap">
+                                <a href="{{ route('data_buku.ubah', $item->id) }}" class="btn btn-primary me-2 mb-2 w-100">Edit</a>
+                                <a href="{{ route('peminjaman_buku.tambah', $item->id) }}" class="btn btn-warning me-2 mb-2 w-100">Pinjam Buku</a>
+                                <button class="btn btn-danger w-100 mb-2" onclick="showModalDelete('{{ $item->id }}', '{{ $item->name }}')">Hapus</button>
                             </div>
                         </div>
                     </div>
-
-                    @if (($loop->index + 1) % 4 == 0)
-                        </div><div class="row">
-                    @endif
-                @endforeach
-            
+                </div>
+            @endforeach
         </div>
 
         <!-- Pagination -->
@@ -86,9 +70,9 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script>
     function showModalDelete(id,name){
-        // memasukkan teks dari parameter ke html bagian id="nama_obat"
+        // memasukkan teks dari parameter ke html bagian id="nama_buku"
         $('#nama_buku').text(name);
-        // memamnggil route hapus
+        // memanggil route hapus
         let url = "{{ route('data_buku.hapus', ':id') }}";
         // isi path dinamis :id dari data parameter id
         url = url.replace(':id', id);

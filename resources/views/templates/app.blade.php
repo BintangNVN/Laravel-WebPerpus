@@ -15,49 +15,74 @@
     {{-- @stack('style') --}}
     <style>
         header {
-    background-color: #1a73e8; /* Warna biru tua */
-    color: #fff;
-    padding: 20px 0;
-    display: flex;
-}
+            background-color: #1a73e8; /* Warna biru tua */
+            color: #fff;
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
-}
+        .container {
+            max-width: 90%; /* Lebih fleksibel pada layar kecil */
+            margin: 0 auto;
+        }
 
-header h1 {
-    float: left;
-    font-size: 28px;
-    margin-left: 20px;
-}
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex; /* Agar semua elemen li tersusun secara horizontal */
-    justify-content: space-around; /* Mengatur jarak antar elemen li */
-}
+        header h1 {
+            font-size: 24px; /* Perkecil ukuran untuk mobile */
+            margin: 0;
+        }
 
-nav ul li {
-    padding: 10px 20px; /* Padding yang seragam untuk setiap item */
-}
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex; /* Agar semua elemen li tersusun secara horizontal */
+            justify-content: space-around; /* Mengatur jarak antar elemen li */
+        }
 
-nav ul li a {
-    text-decoration: none;
-    color: white; /* Warna teks putih agar sesuai dengan tema header */
-}
+        nav ul li {
+            padding: 10px 20px; /* Padding yang seragam untuk setiap item */
+        }
 
-nav ul li a:hover {
-    color: #244f34; /* Warna saat link di-hover */
-}
+        nav ul li a {
+            text-decoration: none;
+            color: white; /* Warna teks putih agar sesuai dengan tema header */
+        }
 
-nav ul li.active a {
-    font-weight: bold; /* Tambahkan gaya berbeda untuk link yang aktif */
-    text-decoration: underline;
-}
+        nav ul li a:hover {
+            color: #244f34; /* Warna saat link di-hover */
+        }
 
+        nav ul li.active a {
+            font-weight: bold; /* Tambahkan gaya berbeda untuk link yang aktif */
+            text-decoration: underline;
+        }
 
+        @media only screen and (max-width: 768px) {
+            header {
+                flex-direction: column; /* Atur header menjadi kolom untuk mobile */
+                text-align: center;
+            }
+
+            header h1 {
+                font-size: 20px; /* Kurangi ukuran font header pada layar kecil */
+                margin-bottom: 10px;
+            }
+
+            nav ul {
+                flex-direction: column; /* Susun navigasi secara vertikal pada layar kecil */
+            }
+
+            nav ul li {
+                padding: 10px 0;
+                text-align: center; /* Buat teks navigasi berada di tengah */
+            }
+
+            .container {
+                max-width: 100%; /* Gunakan lebar penuh di perangkat mobile */
+            }
+        }
     </style>
 </head>
 
